@@ -3,6 +3,52 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int Partion(int arr[], int left, int right)
+{
+	int tmp = 0;
+	tmp = arr[left]; 
+	while (left < right)
+	{
+		while ((left < right) && (arr[right] > tmp))
+		{
+			right--;
+		}
+		if (left == right)
+		{
+			arr[left] = tmp;
+			break;
+		}
+		else if (arr[right] <= tmp)
+		{
+			//去右边找
+		}
+		while ((left < right) && (arr[left] < tmp))
+		{
+			left++;
+		}
+		if (left == right)
+		{
+			arr[left] = tmp;
+			break;
+		}
+		else
+		{
+			//去做边找
+		}
+	}
+	return left;
+}
+
+int main()
+{
+
+}
+
+
+
+
+#if 0
+
 int main()
 {
 	int n = 0;
@@ -19,7 +65,6 @@ int main()
 
 
 
-#if 0
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
