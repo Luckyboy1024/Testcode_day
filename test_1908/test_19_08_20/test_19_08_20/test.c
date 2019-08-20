@@ -2,50 +2,66 @@
 
 #include <stdio.h>
 
+#if 0 
 int main()
 {
-	char a = 0xA5;
-	char b = ~a >> 5;
+	unsigned char a = 0xA5;
+	unsigned char b = ~a >> 5;
 	printf("%d\n", b);
 	return 0;
 }
+//测试结果：250
+#endif
+
+#if 0
+int main()
+{
+	char a = 0xA5;				//a 取消无符号类型
+	unsigned char b = ~a >> 5;
+	printf("%d\n", b);
+	return 0;
+}
+//测试结果：2
+
+#endif
+
+#if 0
+int main()
+{
+	unsigned char a = 0xA5;
+	char b = ~a >> 5;			//b 取消无符号类型
+	printf("%d\n", b);
+	return 0;
+}
+//测试结果：-6
+
+#endif
 
 #if 0
 
-void Foo(int x, int y);
-inline void Foo(int x, int y) // inline与函数定义体放在一起 
+int main()
 {
-	⋯
+	unsigned char a = 0xA5;
+	unsigned char b = ~(a >> 5);		//改变运算顺序
+	printf("%d\n", b);
+	return 0;
 }
-
-void Foo(int x, int y)
-{
-	⋯
-}
-
-
-class A
-{
-public:
-	void Foo(int x, int y) { ⋯ }		// 自动地成为内联函数 
-}
-
-// 
-
-
-// 头文件 
-class A
-{
-public:
-	void Foo(int x, int y)；
-}
-
-// 定义文件 
-inline void A::Foo(int x, int y)
-{
-	⋯
-}
-
-
+//测试结果：250
+//1010 0101  ~~  0xA5
+//0000 0000 0000 0000 0000 0000 1010 0101	~~ 整型提升
+//1111 1111 1111 1111 1111 1111 0101 1010	~~ 按位取反
 
 #endif
+
+#if 1
+
+int main()
+{
+	char a = 0;
+	printf("%d\n", sizeof(!a));
+	printf("%d\n", a);
+	return 0;
+}
+
+#endif
+
