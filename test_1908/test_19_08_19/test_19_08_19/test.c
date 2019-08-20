@@ -3,7 +3,15 @@
 
 #include <stdio.h>
 
+int main()
+{
+	int i = 0;
+	return 0;
+}
 
+
+
+#if 0
 void Move(int n, char p1, char p2)	//棋子 n，移动起始位置p1，最终位置p2
 {
 	static int count = 1;
@@ -51,8 +59,6 @@ int main()
 	return 0;
 }
 
-
-#if 0
 
 int Jump_Floor(int n)
 {
