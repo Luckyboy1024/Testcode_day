@@ -1,6 +1,8 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
 
 #include <stdio.h>
+#include <Windows.h>
+
 
 #if 0 
 int main()
@@ -57,7 +59,7 @@ int main()
 
 int main()
 {
-	char a = 0;
+	char a = 3;
 	printf("%d\n", sizeof(!a));
 	printf("%d\n", a);
 	return 0;
@@ -65,3 +67,41 @@ int main()
 
 #endif
 
+#if 0
+
+char *DeleteRepeateChar(char *str1, char *str2)
+{
+	char* s = str2;
+	char* t = str1;
+	char* p = str1;
+	char* q = str1;
+	int arr[256] = { 0 };
+	while ('\0' != *s)
+	{
+		arr[*str2] = 1;
+		s++;
+	}
+	while ('\0' != *p)
+	{
+		if(1 != arr[*t])
+		{
+			*q = *p;
+			q++;
+			//*q++ = *p;
+		}
+		p++;
+	}
+	return str1;
+}
+
+
+int main()
+{
+	char *arr1 = "Welcome to cvte";
+	char *arr2 = "come";
+	char *str = DeleteRepeateChar(arr1, arr2);
+	printf("%s", str);
+	return 0;
+}
+
+#endif
