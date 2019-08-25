@@ -1,5 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
+
+
+
+
+#if 0
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -15,9 +21,9 @@ void test()
 	printf("##  base  1.0.1  ##\n");
 	printf("##   Form: joy   ##\n");
 	printf("###################\n");
-	
+
 	bc();
-	
+
 }
 
 int main()
@@ -25,9 +31,6 @@ int main()
 	test();
 	return 0;
 }
-
-
-#if 0
 
 char a[] = {0};
 char *p = a;
