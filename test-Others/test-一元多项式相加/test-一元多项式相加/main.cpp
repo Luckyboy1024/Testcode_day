@@ -5,6 +5,8 @@
 #include "Polynomial.h"
 #include "main.h"
 
+#if 0
+
 int main()
 {
 	polynomial A, B;
@@ -35,3 +37,5 @@ int main()
 	DestroyPolyn(A);
 	return 0;
 }
+
+#endif
