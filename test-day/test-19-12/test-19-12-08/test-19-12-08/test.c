@@ -15,22 +15,33 @@ void print(uint32_t* arr, uint32_t row, uint32_t col)
 {
 	for (int i = 0; i < row; ++i)
 	{
-		for (int j = 0; j < col; ++j)
+		if (0 == i % 3)
 		{
-			printf("----");
+			for (int j = 0; j < (col / 3); ++j)
+			{
+				printf("+-----------");
+			}
+			printf("+\n");
 		}
-		printf("-\n");
+		else
+		{
+			for (int j = 0; j < (col / 3); ++j)
+			{
+				printf("|- - - - - -");
+			}
+			printf("|\n");
+		}
 		for (int j = 0; j < col; ++j)
 		{
 			printf("|%2d ", *(arr + i*row + j));
 		}
 		printf("|\n");
-	}		
-	for (int j = 0; j < col; ++j)
-	{
-		printf("----");
 	}
-	printf("-\n");
+	for (int j = 0; j < (col / 3); ++j)
+	{
+		printf("+-----------");
+	}
+	printf("+\n");
 }
 
 void start()
@@ -50,3 +61,27 @@ int main()
 	return 0;
 }
 
+
+#if 0
+
+
+for (int i = 0; i < row; ++i)
+{
+	for (int j = 0; j < col; ++j)
+	{
+		printf("----");
+	}
+	printf("-\n");
+	for (int j = 0; j < col; ++j)
+	{
+		printf("|%2d ", *(arr + i*row + j));
+	}
+	printf("|\n");
+}
+for (int j = 0; j < col; ++j)
+{
+	printf("----");
+}
+printf("-\n");
+
+#endif
